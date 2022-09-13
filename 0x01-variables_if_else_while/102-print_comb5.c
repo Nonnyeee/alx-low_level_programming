@@ -1,35 +1,47 @@
 #include <stdio.h>
 /**
- * main - entry point
+ * main - prints numbers between 0 to 99
  *
- * codes for printing all possible combination of two d/t digits
- * in ascending order and seperated by a comma followed by a space
- *
- * Return: 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int digit1, digit2, digit3;
+int i, e, g, h, op1, op2;
 
-	for (digit1 = 0; digit1 < 9; digit1++)
+i = e = g = h = 48;
+while (h < 58)
+{
+	g = 48;
+	while (g < 58)
 	{
-		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
+		e = 48;
+		while (e < 58)
 		{
-			for (digit3 = digit2 + 1; digit3 < 10; digit3++)
+			i = 48;
+			while (i < 58)
 			{
-				putchar((digit1 % 10) + '0');
-				putchar((digit2 % 10) + '0');
-				putchar((digit3 % 10) + '0');
-
-				if (digit1 == 7 && digit2 == 8 && digit3 == 9)
-					continue;
-				putchar(',');
-				putchar(' ');
+				op1 = (h * 10) + g;
+				op2 = (e * 10) + i;
+				if (op1 < op2)
+				{
+					putchar(h);
+					putchar(g);
+					putchar(' ');
+					putchar(e);
+					putchar(i);
+					if (h == 57 && g == 56 && e == 57 && i == 57)
+						break;
+					putchar(',');
+					putchar(' ');
+				}
+				i++;
 			}
+			e++;
 		}
+		g++;
 	}
-	putchar('\n');
-
-	return (0);
+	h++;
 }
-
+putchar('\n');
+return (0);
+}
