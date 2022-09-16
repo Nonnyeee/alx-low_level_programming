@@ -1,1 +1,1 @@
-part of the code that is causing the output to go into an infinite loop.
+function similar to the one you worked with in an earlier C project
