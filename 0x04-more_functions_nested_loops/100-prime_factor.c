@@ -14,7 +14,7 @@ int main(void)
 	{
 		while (n % pf == 0)
 		{
-			printf("%ld", pf);
+			printf("%ld ", pf);
 			n = n / pf;
 		}
 		printf("\n");
