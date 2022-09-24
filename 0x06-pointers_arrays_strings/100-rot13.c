@@ -2,6 +2,7 @@
 /**
  * rot13 - encodes a key into rot13
  * @s: string to encode
+ *
  * Return: address of s
  */
 char *rot13(char *s)
