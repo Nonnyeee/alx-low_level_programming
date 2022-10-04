@@ -6,31 +6,27 @@
  * @argc: Count arguments
  * @argv: Arguments
  *
- * Return: Always 0 (Success)
+ * Return: -1 if any number contains symbols that are non-digits, otherwise 0
  */
 int main(int argc, char *argv[])
 {
-	/*Declaring variables*/
-	int count;
-	int str_to_int;
-	int sum = 0;
+	int num, digit, sum = 0;
 
-	count = 1;
-	while (count < argc) /*Goes through the whole array*/
+	for (num = 1; num < argc; num++)
 	{
-		if (check_num(argv[count]))
+		for (digit = 0; argv[num][digit]; digit++)
 		{
-			str_to_int = atoi(argv[count]); /*ATOI --> convert string to int*/
-			sum += str_to_int;
+			if (argv[num][digit] < '0' || argv[num][digit] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		/*Condition if one of the numberscontains symbols that are not digits*/
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-		count++;
+
+		sum += atoi(argv[num]);
 	}
-	printf("%d\n", sum); /*print sum*/
+
+	printf("%d\n", sum);
+
 	return (0);
 }
