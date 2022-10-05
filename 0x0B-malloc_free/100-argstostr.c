@@ -7,14 +7,14 @@
  * @av: double pointer to arguments
  * Return: pointer to new string, or NULL if error
  */
-char argstostr(int ac, char **av)
+char *argstostr(int ac, char **av)
 {
 	int i, j, k = 0, n = 0;
 	char *s;
 
 	if (ac <= 0 || av == NULL)
 		return (NULL);
-	for (i = o; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++)
 			n++;
